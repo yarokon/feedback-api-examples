@@ -1,8 +1,7 @@
-// [OPTIONALLY] Use your X-RapidAPI-Key from https://rapidapi.com/blips-and-chitz-blips-and-chitz-default/api/feedback-api5
 const API_KEY = '637316bb60msh72029ce58a98a83p19d6d5jsnb9fefc607f61';
 
-export function connectFeedbackApi(element) {
-  element.addEventListener('click', async (event) => {
+export function connectFeedbackApi(container) {
+  container.addEventListener('click', async (event) => {
     const feedback = JSON.parse(window.localStorage.getItem('feedback'));
 
     const options = {
@@ -27,15 +26,17 @@ export function connectFeedbackApi(element) {
       const data = await response.json();
 
       window.localStorage.setItem('feedback', JSON.stringify(data));
-      setActiveButton();
+      setActiveButton(container);
     }
   });
+
+  setActiveButton(container);
 }
 
-export function setActiveButton() {
+function setActiveButton(container) {
   const feedback = JSON.parse(window.localStorage.getItem('feedback'));
 
-  const buttons = Array.from(document.querySelector('#buttons-container').children);
+  const buttons = Array.from(container.children);
   const firstButton = buttons[0];
   const secondButton = buttons[1];
 

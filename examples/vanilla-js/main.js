@@ -1,4 +1,4 @@
-import { connectFeedbackApi, setActiveButton } from './utils.js';
+import { connectFeedbackApi } from './connectFeedbackApi.js';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -12,4 +12,3 @@ document.querySelector('#app').innerHTML = `
 `;
 
 connectFeedbackApi(document.querySelector('#buttons-container'));
-setActiveButton();
