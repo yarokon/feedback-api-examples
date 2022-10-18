@@ -13,4 +13,3 @@ document.querySelector('#app').innerHTML = `
 
 connectFeedbackApi(document.querySelector('#buttons-container'));
 setActiveButton();
-
