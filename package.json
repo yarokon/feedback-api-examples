@@ -1,0 +1,17 @@
+{
+  "name": "feedback-api-examples",
+  "version": "1.0.0",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarokon/feedback-api-examples.git"
+  },
+  "author": "Blips And Chitz",
+  "license": "ISC",
+  "homepage": "https://github.com/yarokon/feedback-api-examples#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
