@@ -1,3 +1,5 @@
+[Demo](https://yarokon.github.io/feedback-api-examples/examples/vanilla-js/)
+
 ## Preparation
 
 Open `connectFeedbackApi.js` and paste your `X-RapidAPI` key from [Feedback API portal](https://rapidapi.com/blips-and-chitz-blips-and-chitz-default/api/feedback-api5)
