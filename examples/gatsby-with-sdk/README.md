@@ -40,10 +40,10 @@ npx gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-bl
 ## Integration
 
 ### Custom hook
-Lets integrate FeedbackAPI to our blog.
+Lets integrate `Feedback API` to our blog.  
 Create custom hook `useFeedbackApi` in `src/hooks/useFeedbackApi`. In this hook we will use SDK.
 
-Install sdk:
+Install SDK:
 
 ```
 npm i blips-and-chitz-feedback-api-sdk
