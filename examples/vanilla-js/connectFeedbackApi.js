@@ -13,7 +13,7 @@ export function connectFeedbackApi(container) {
       body: JSON.stringify({
         sentiment: event.target.value === 'yes',
         userId: feedback?.userId,
-        page: 'vanilla-js example',
+        page: location.href,
       }),
     };
 
@@ -22,7 +22,7 @@ export function connectFeedbackApi(container) {
       options
     );
 
-    if (response.status === 200 || response.status === 201) {
+    if (response.ok) {
       const data = await response.json();
 
       window.localStorage.setItem('feedback', JSON.stringify(data));

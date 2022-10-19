@@ -1,0 +1,62 @@
+<script>
+  (() => {
+    const config = {
+      rapidApiKey: '', // paste your X-RapidAPI-Key from https://rapidapi.com/blips-and-chitz-blips-and-chitz-default/api/feedback-api5
+      selector: '', // example: '#feedback-container'
+      context: {}, // optional context. You can add category and tags
+    };
+
+    const template = `
+      <div>
+        <span>Is this page useful?</span>
+        <span style="cursor:pointer;font-size: 20px;">
+          <span data-sentiment="like">👍</span>
+          <span data-sentiment="dislike">👎</span>
+        </span>
+      </div>
+    `;
+
+    addFeedback(config);
+
+    function addFeedback({ rapidApiKey, selector, context }) {
+      const container = document.querySelector(selector);
+
+      container.innerHTML = template;
+
+      container.addEventListener('click', async (event) => {
+        const feedback = JSON.parse(window.localStorage.getItem('feedback'))?.[page];
+        const page = location.href;
+
+        let method = 'POST';
+        let path = '/feedback';
+
+        if (feedback) {
+          method = 'PUT';
+          path = `/feedback/${feedback.id}`;
+        }
+
+        const options = {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-RapidAPI-Key': rapidApiKey,
+          },
+          body: JSON.stringify({
+            sentiment: event.target.dataset.sentiment === 'like',
+            userId: feedback?.userId,
+            page: location.href,
+            ...context,
+          }),
+        };
+
+        const response = await fetch(`https://feedback-api5.p.rapidapi.com/${path}`, options);
+
+        if (response.ok) {
+          const feedback = await response.json();
+
+          window.localStorage.setItem('feedback', JSON.stringify({ [page]: feedback }));
+        }
+      });
+    }
+  })();
+</script>
