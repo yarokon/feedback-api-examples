@@ -1,9 +1,9 @@
 # Gatsby Blog with JS SDK
 
-**Demo** - https://gatsbyblogmain41640.gatsbyjs.io/
+**Demo** - https://gatsbyblogmain41640.gatsbyjs.io/   
 **Repo** - https://github.com/iosypov/gatsby-blog
 
-Example with gatsby blog with using SDK [`blips-and-chitz-feedback-api-sdk`](https://www.npmjs.com/package/blips-and-chitz-feedback-api-sdk) for like/dislike blog post.
+Sample gatsby blog with using SDK [`blips-and-chitz-feedback-api-sdk`](https://www.npmjs.com/package/blips-and-chitz-feedback-api-sdk) for like/dislike blog post.
 Created on gatsby starter blog.
 
 You an use this tutorial not only for gatsby portal, you can use on every ReactJS Application.
@@ -176,8 +176,6 @@ Now we can look our feedbacks on [Feedback API portal](https://rapidapi.com/blip
 1. Enter in `tags` - `["sample-blog"]`. It's for filter.
 1. Click `Test Endpoint`
 1. Now you can see all feedbacks from `blog`. You can also setup another filter. For example you want see all feedbacks on /my-blog/ page, just input in `page` parameters `["/my-blog/"]`.
-
-
 
 ### Conclusion
 
