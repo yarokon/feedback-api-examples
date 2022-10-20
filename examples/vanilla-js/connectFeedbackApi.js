@@ -27,6 +27,8 @@ export function connectFeedbackApi(container) {
 
       window.localStorage.setItem('feedback', JSON.stringify(data));
       setActiveButton(container);
+    } else if (response.status === 404) {
+      window.localStorage.removeItem('feedback');
     }
   });
 
